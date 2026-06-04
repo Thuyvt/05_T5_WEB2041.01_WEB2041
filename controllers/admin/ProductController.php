@@ -1,9 +1,11 @@
 <?php
     class ProductController {
         private $productModel;
+        private $categoryModel;
 
         public function __construct() {
             $this->productModel = new ProductModel();
+            $this->categoryModel = new CategoryModel();
         }
 
         // Chuyển trang về trang danh sách sản phẩm
@@ -47,6 +49,7 @@
         public function create() {
             $view = 'product/create';
             $title = 'Thêm mới sản phẩm';
+            $list_cat = $this->categoryModel->getAll();
             require_once PATH_VIEW_MAIN_ADMIN;
         }
 
@@ -70,6 +73,7 @@
             $view = 'product/edit';
             $title = 'Cập nhật sản phẩm';
             $data = $product;
+            $list_cat = $this->categoryModel->getAll();
             require_once PATH_VIEW_MAIN_ADMIN;
         }
 

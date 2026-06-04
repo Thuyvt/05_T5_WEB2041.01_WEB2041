@@ -20,7 +20,7 @@
         <tr>
             <td><?= $pro["id"]?></td>
             <td>
-                <img src="<?= BASE_ASSETS_UPLOADS_PRODUCTS . $pro["image"]?>" width="100px">
+                <img src="<?= BASE_ASSETS_UPLOADS . $pro["image"]?>" width="100px">
             </td>
             <td><?= $pro["pro_name"]?></td>
             <td><?= $pro["cat_name"]?></td>
