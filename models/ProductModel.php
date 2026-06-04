@@ -76,5 +76,15 @@
 
             return $stmt->execute([':id' => (int) $id]);
         }
+
+        // Top 4 sản phẩm hot mới nhất
+        public function getTop4Hot() {
+            $sql = "SELECT id,image,name,price FROM products WHERE is_hot = 1 ORDER BY id DESC LIMIT 4";
+
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+
+        }
     }
 ?>
